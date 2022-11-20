@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        background-image: url(back.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0px;
+      }
+      a {
+        color: #f00;
+      }
+      #info {
+        color: #000000;
+      }
+      input{
+        position: relative;
+        z-index: 5;
+      }
+      #curverose1 ,#animatepinklow,#curve2rose1,#curve3rose1,#animatepinkhigh,#animatewhite,#animatebeige{
+        position: absolute;
+        float: left;
+        left: 20%;
+        top: 1%;
+        z-index: 10;
+        padding: 30px;
+      }
+
+      #curverose2 ,#curve2rose2,#curve3rose2,#hydrange,#hydrange_Pink,#gerberapink,#gerberawhite,#lilipink,#liliwhite{
+        position: absolute;
+        float: left;
+        left: 20%;
+        top: 1%;
+        z-index: 10;
+        padding: 30px;
+      }
+
+#tobic{
+  position: absolute;
+  background-image: url(topic.png);
+background-size: cover;
+        float: left;
+        left: 50%;
+        top: 1%;
+        z-index: 10;
+        padding: 30px;
+
+  
+}
+
+     
+      #animatepinklow{
+left: 75%;
+background-image: url(curve1.png);
+background-size: cover;
+
+      }
+   
+#animatepinkhigh{
+
+  
+left: 80%;
+background-image: url(animate_pink_high.png);
+background-size: cover;
+}
+
+
+#animatewhite{
+
+  
+left: 85%;
+background-image: url(animate_white.png);
+background-size: cover;
+}
+
+#animatebeige{
+
+  left: 70%;
+background-image: url(animate_beige.png);
+background-size: cover;
+
+}
+
+
+
+
+#hydrange{
+  left: 30%;
+background-image: url(hydrange.png);
+background-size: 100% 100%;
+
+}
+
+#hydrange_Pink{
+  left: 35%;
+background-image: url(hydrange_Pink.png);
+background-size: 100% 100%;
+
+}
+#gerberapink{
+  left: 40%;
+background-image: url(gelebra_pink.png);
+background-size: 100% 100%;
+
+}
+
+#gerberawhite{
+
+  left: 45%;
+background-image: url(gelebra_white.png);
+background-size: 100% 100%;
+
+
+}
+
+#lilipink{
+
+  left: 57%;
+background-image: url(lilipink.png);
+background-size: 100% 100%;
+
+
+}
+
+#liliwhite{
+
+  left: 61%;
+background-image: url(liliwhite.png);
+background-size: 100% 100%;
+
+
+
+}
+
+      #curve2rose2{
+left: 30%;
+background-image: url(rose2image/curve2.png);
+background-size: cover;
+
+      }
+      #curve3rose2{
+left: 35%;
+background-image: url(rose2image/curve3.png);
+background-size: cover;
+
+      }
+
+      #rox , #lrox{
+        position: absolute;
+        width: 1000px;
+        height: 50px;
+        background-color: #000000;
+        top: 70%;
+        color: #babbc5;
+      }
+      #roy , #lroy{
+        position: absolute;
+        width: 1000px;
+        height: 50px;
+        background-color: #000000;
+        top: 80%;
+        color: #babbc5;
+      }
+
+      #roz , #lroz{
+        position: absolute;
+        width: 1000px;
+        height: 50px;
+        background-color: #000000;
+        top: 90%;
+        color: #babbc5;
+      }
+      #del{
+        position: absolute;
+        left: 90%;
+        top: 90%;
+        padding: 20px;
+        z-index: 10;
+      }
+      #getarry{
+position: absolute;
+left: 90%;
+top: 3%;
+padding: 10px;
+z-index: 10;
+
+      }
+
+#showname{
+  position: absolute;
+  width: 10%;
+  height: 20px;
+  top: 50%;
+  z-index: 10;
+  
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+<div id="showname"></div>
+   
+    <button id="animatepinklow"></button>
+    <button id="animatepinkhigh"></button>
+    <button id="animatewhite"></button>
+    <button id="animatebeige"></button>
+
+
+    <button id="tobic"></button>
+
+
+    
+   
+    <button id="hydrange"></button>
+    <button id="hydrange_Pink"></button>
+    <button id="gerberapink"></button>
+    <button id="gerberawhite"></button>
+    <button id="lilipink"></button>
+    <button id="liliwhite"></button>
+
+    
+    
+<button id="getarry">getinformation</button>
+
+<label for="rox" id="lrox">rotationX</label>
+    <input type="range" name="" id="rox" min="-200" max="200" step="0.00000000001">
+
+    <label for="roy" id="lroy">rotationY</label>
+    <input type="range" name="" id="roy" min="-200" max="200" step="0.00000000001">
+
+    
+    <label for="roz" id="lroz">rotationZ</label>
+    <input type="range" name="" id="roz" min="-200" max="200" step="0.00000000001">
+
+    <button id="del">DELET</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+<label for="xpo">position X </label>
+<input text="" id="xpo"/><br>
+
+<label for="xpo">position Y </label>
+<input text="" id="ypo"/><br>
+
+<label for="xpo">position Z </label>
+<input text="" id="zpo"/><br>
+
+<br>
+<br>
+<br>
+<label for="valrox">rotation X </label>
+<input text="" id="valrox"/><br>
+<label for="valroy">rotation Y </label>
+<input text="" id="valroy"/><br>
+<label for="valroz">rotation Z </label>
+<input text="" id="valroz"/><br>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

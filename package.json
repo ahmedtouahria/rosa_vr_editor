@@ -1,0 +1,23 @@
+{
+    "name": "vanilla",
+    "version": "1.0.0",
+    "description": "JavaScript example starter project",
+    "main": "index.html",
+    "scripts": {
+      "start": "parcel index.html --open",
+      "build": "parcel build index.html"
+    },
+    "dependencies": {
+      "drag-controls": "1.0.4",
+      "three": "0.113.2",
+      "three-css3drenderer": "1.0.1",
+      "three-dragcontrols": "0.88.2",
+      "three-orbitcontrols-ts": "0.1.2"
+    },
+    "devDependencies": {
+      "@babel/core": "7.2.0",
+      "parcel-bundler": "^1.6.1"
+    },
+    "keywords": ["javascript", "starter"]
+  }
+  

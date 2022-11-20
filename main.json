@@ -1,0 +1,5 @@
+{
+  "roses":[{"id":1,"quantity":"rose1"},{"id":0,"quantity":"rose2z"},{"id":0,"quantity":"rose3"},{"id":0,"quantity":"rose4"}],
+  "vase_id":1,
+  "topic_id":"sndan1"
+}
