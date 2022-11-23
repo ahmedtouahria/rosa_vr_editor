@@ -83,15 +83,15 @@ document.getElementById('tobic').addEventListener('click',tobic);
 
 //document.getElementById('curve1rose2').addEventListener('click',curve1rose2);
 hydrange
-document.getElementById('hydrange').addEventListener('click',hydrange_white);
+document.getElementById('hydrange')?.addEventListener('click',hydrange_white);
 
-document.getElementById('hydrange_Pink').addEventListener('click',hydrange_Pink);
+document.getElementById('hydrange_Pink')?.addEventListener('click',hydrange_Pink);
 
-document.getElementById('gerberapink').addEventListener('click',gerberapink);
-document.getElementById('gerberawhite').addEventListener('click',gerberawhite);
-document.getElementById('lilipink').addEventListener('click',lilipink);
+document.getElementById('gerberapink')?.addEventListener('click',gerberapink);
+document.getElementById('gerberawhite')?.addEventListener('click',gerberawhite);
+document.getElementById('lilipink')?.addEventListener('click',lilipink);
 
-document.getElementById('liliwhite').addEventListener('click',liliwhite);
+document.getElementById('liliwhite')?.addEventListener('click',liliwhite);
 
 
   // curve
@@ -380,19 +380,13 @@ function tobic() {
         if(child.name=="base"){
           child.receiveShadow = true;
           child.castShadow = true;
-          child.name="tobic"
+          child.name="TOPIC"
         //  child.material.envMap=cubeRenderTarget.texture
           objects.push(child)
           global_array_of_flowers.push(child)
           scene.add(child);
-
         }
-         
-
- 
-
       }
-
     });
 
 
@@ -771,6 +765,16 @@ for (let i of arr) {
 };
 return counter;
 }
+function sortPropertiesByValue(object) {
+  const keys = Object.keys(object);
+  const valuesIndex = keys.map(key => ({ key, value: object[key] }));
+  valuesIndex.sort((a,b) => (a.key > b.key) ? 1 : ((b.key > a.key) ? -1 : 0)); // sorting by key
+  const newObject = {};
+  for (const item of valuesIndex) {
+    newObject[item.key] = item.value;
+  }
+  return newObject;
+}
 document.getElementById("getarry")?.addEventListener("click",function(){
   const references = {};
   const references_flower_array = [];
@@ -784,5 +788,5 @@ document.getElementById("getarry")?.addEventListener("click",function(){
     references[i]=count_occur(i,references_flower_array)
   }
   console.log({"data":array_of_flowers.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))}) //with sorting
-  console.log(references)
+  console.log(sortPropertiesByValue(references))
 })
