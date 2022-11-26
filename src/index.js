@@ -216,7 +216,7 @@ function hydrange_Pink() {
 
 
 function gerberapink() {
-  loader.load('models/changeposition/Gerbera/GERBERA.glb', function (gltff) {
+  loader.load('models/changeposition/Gerbera/gpink.glb', function (gltff) {
     gltff.scene.children[0].traverse(function (child) {
       if (child.isMesh) {
         if(child.name=="gerberapink"){
@@ -254,40 +254,6 @@ function gerberapink() {
  
 
 
-
-function gerberawhite() {
-  loader.load('models/changeposition/Gerbera/GERBERA.glb', function (gltff) {
-    gltff.scene.children[0].traverse(function (child) {
-      if (child.isMesh) {
-        if(child.name=="gerberawhite"){
-          child.receiveShadow = true;
-          child.castShadow = true;
-       //   child.material.envMap=cubeRenderTarget.texture
-          child.material.needsUpdate = true;
-
-          child.name="GERBERA"
-          objects.push(child)
-          global_array_of_flowers.push(child)
-          scene.add(child);
-
-        }
-         
-
- 
-
-      }
-
-    });
-
-
-  }, (xhr) => {
-    
-  }, (error) => {
-    
-  });
-
-
-}
 
 
 
