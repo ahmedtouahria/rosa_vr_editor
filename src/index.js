@@ -312,32 +312,14 @@ function liliwhite() {
           objects.push(child)
           global_array_of_flowers.push(child)
           scene.add(child);
-
         }
-         
-
- 
-
       }
-
     });
-
-
   }, (xhr) => {
-    
   }, (error) => {
-    
   });
-
-
 }
-
-
-
 //tobic rose
-
-
-
 
 function tobic() {
   loader.load('models/changeposition/tobic/topic.glb', function (gltff) {
@@ -565,7 +547,7 @@ var cubeCamera = new THREE.CubeCamera( 1, 1000, cubeRenderTarget );
 
 
 
-if(event.object.name=="lilipink" || event.object.name=="liliwhite" || event.object.name=="gerberawhite" || event.object.name=="gerberapink" || event.object.name=="animatewhite" ||  event.object.name=="animatebeige" || event.object.name=="animatepinklow" || event.object.name=="animatepinkhigh" || event.object.name=="base" || event.object.name=="hydrangewhite" || event.object.name=="hydrangepink" || event.object.name=="gerbera" || event.object.name=="ROSE" || event.object.name=="HYDRANGE"|| event.object.name=="GERBERA" || event.object.name=="LILY" || event.object.name=="rose2curv" || event.object.name=="rose2curv1"|| event.object.name=="rose2curv2" || event.object.name=="rose2curv3" || event.object.name=="tobic"){
+if(event.object.name=="lilipink" || event.object.name=="liliwhite" || event.object.name=="gerberawhite" || event.object.name=="gerberapink" || event.object.name=="animatewhite" ||  event.object.name=="animatebeige" || event.object.name=="animatepinklow" || event.object.name=="animatepinkhigh" || event.object.name=="base" || event.object.name=="hydrangewhite" || event.object.name=="hydrangepink" || event.object.name=="gerbera" || event.object.name=="ROSE" || event.object.name=="HYDRANGE"|| event.object.name=="GERBERA" || event.object.name=="LILY" || event.object.name=="rose2curv" || event.object.name=="rose2curv1"|| event.object.name=="rose2curv2" || event.object.name=="rose2curv3" || event.object.name=="TOPIC"){
   dragControls.enabled=true
   controls.enabled = false;
 
