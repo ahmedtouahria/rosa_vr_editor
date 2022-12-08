@@ -1,17 +1,9 @@
 import * as THREE from "./three.module.js";
-
 import { OrbitControls } from "./OrbitControls.js";
-import { CSS3DRenderer, CSS3DObject, CSS3DSprite } from "./CSS3DRenderer.js";
 import { DragControls } from "./DragControls.js";
 import { GLTFLoader } from "./GLTFLoader.js";
 import { RGBELoader } from './RGBELoader.js';
 import { RoughnessMipmapper } from './RoughnessMipmapper.js';
-import Stats from './jsm/libs/stats.module.js';
-import { GUI } from './jsm/libs/dat.gui.module.js';
-import { Water } from './jsm/objects/Water.js';
-import { Sky } from './jsm/objects/Sky.js';
-
-
 var container;
 var camera, scene, renderer, renderer1, controls;
 var objects = [];
@@ -82,19 +74,98 @@ document.getElementById('tobic').addEventListener('click',tobic);
 
 
 //document.getElementById('curve1rose2').addEventListener('click',curve1rose2);
-hydrange
 document.getElementById('hydrange')?.addEventListener('click',hydrange_white);
-
 document.getElementById('hydrange_Pink')?.addEventListener('click',hydrange_Pink);
-
 document.getElementById('gerberapink')?.addEventListener('click',gerberapink);
 document.getElementById('gerberawhite')?.addEventListener('click',gerberawhite);
 document.getElementById('lilipink')?.addEventListener('click',lilipink);
-
 document.getElementById('liliwhite')?.addEventListener('click',liliwhite);
+document.getElementById('Chamelaucium')?.addEventListener('click',Chamelaucium);
+document.getElementById('Alstroemeria')?.addEventListener('click',Alstroemeria);
 
 
-  // curve
+
+function Chamelaucium() {
+  loader.load('models/changeposition/Chamelaucium/Chamelaucium.glb', function (gltff) {
+    gltff.scene.children[0].traverse(function (child) {
+      
+      if (child.isMesh) {
+        if(child.name=="Chamelaucium"){
+          child.receiveShadow = true;
+          child.castShadow = true;
+       //   child.material.envMap=cubeRenderTarget.texture
+          child.material.needsUpdate = true;
+          child.name="WAX";
+          objects.push(child)
+          global_array_of_flowers.push(child)
+          scene.add(child);
+
+        }
+         
+
+ 
+
+      }
+
+    });
+
+
+  }, (xhr) => {
+    
+  }, (error) => {
+    
+  });
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function Alstroemeria() {
+  loader.load('models/changeposition/Alstroemeria/Alstroemeria.glb', function (gltff) {
+    gltff.scene.children[0].traverse(function (child) {
+      
+
+      if (child.isMesh) {
+        if(child.name=="Alstroemeria"){
+          child.receiveShadow = true;
+          child.castShadow = true;
+       //   child.material.envMap=cubeRenderTarget.texture
+          child.material.needsUpdate = true;
+
+          child.name="AlSTOEMERIA"
+          objects.push(child)
+          global_array_of_flowers.push(child)
+          scene.add(child);
+
+        }
+         
+
+ 
+
+      }
+
+    });
+
+
+  }, (xhr) => {
+    
+  }, (error) => {
+    
+  });
+
+
+}
+
   
   function animatebeige() {
     loader.load('models/changeposition/animate/ROSE.glb', function (gltff) {
@@ -547,7 +618,7 @@ var cubeCamera = new THREE.CubeCamera( 1, 1000, cubeRenderTarget );
 
 
 
-if(event.object.name=="lilipink" || event.object.name=="liliwhite" || event.object.name=="gerberawhite" || event.object.name=="gerberapink" || event.object.name=="animatewhite" ||  event.object.name=="animatebeige" || event.object.name=="animatepinklow" || event.object.name=="animatepinkhigh" || event.object.name=="base" || event.object.name=="hydrangewhite" || event.object.name=="hydrangepink" || event.object.name=="gerbera" || event.object.name=="ROSE" || event.object.name=="HYDRANGE"|| event.object.name=="GERBERA" || event.object.name=="LILY" || event.object.name=="rose2curv" || event.object.name=="rose2curv1"|| event.object.name=="rose2curv2" || event.object.name=="rose2curv3" || event.object.name=="TOPIC"){
+if(event.object.name=="lilipink" || event.object.name=="liliwhite" || event.object.name=="WAX" || event.object.name=="AlSTOEMERIA"  ||  event.object.name=="gerberawhite" || event.object.name=="gerberapink" || event.object.name=="animatewhite" ||  event.object.name=="animatebeige" || event.object.name=="animatepinklow" || event.object.name=="animatepinkhigh" || event.object.name=="base" || event.object.name=="hydrangewhite" || event.object.name=="hydrangepink" || event.object.name=="gerbera" || event.object.name=="ROSE" || event.object.name=="HYDRANGE"|| event.object.name=="GERBERA" || event.object.name=="LILY" || event.object.name=="rose2curv" || event.object.name=="rose2curv1"|| event.object.name=="rose2curv2" || event.object.name=="rose2curv3" || event.object.name=="TOPIC"){
   dragControls.enabled=true
   controls.enabled = false;
 
