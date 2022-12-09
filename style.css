@@ -1,0 +1,233 @@
+body {
+  background-image: url(images/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+}
+a {
+  color: #f00;
+}
+#info {
+  color: #000000;
+}
+input{
+  position: relative;
+  z-index: 5;
+}
+#curverose1 ,#animatepinklow,#curve2rose1,#curve3rose1,#animatepinkhigh,#animatewhite,#animatebeige,#textarea{
+  position: absolute;
+  float: left;
+  left: 20%;
+  top: 1%;
+  z-index: 10;
+  padding: 30px;
+}
+
+#curverose2 ,#curve2rose2,#curve3rose2,#hydrange,#hydrange_Pink,#gerberapink,#gerberawhite,#lilipink,#liliwhite{
+  position: absolute;
+  float: left;
+  left: 20%;
+  top: 1%;
+  z-index: 10;
+  padding: 30px;
+}
+#Alstroemeria,#Chamelaucium{
+  position: absolute;
+  float: left;
+  left: 20%;
+  top: 10%;
+  z-index: 10;
+  padding: 30px;
+
+  
+} 
+
+#tobic{
+position: absolute;
+background-image: url(images/topic.png);
+background-size: cover;
+  float: left;
+  left: 50%;
+  top: 1%;
+  z-index: 10;
+  padding: 30px;
+
+
+}
+#animatepinklow{
+left: 75%;
+background-image: url(images/curve1.png);
+background-size: cover;
+
+}
+
+#animatepinkhigh{
+
+
+left: 80%;
+background-image: url(images/animate_pink_high.png);
+background-size: cover;
+}
+
+
+#animatewhite{
+
+
+left: 85%;
+background-image: url(images/animate_white.png);
+background-size: cover;
+}
+
+#animatebeige{
+
+left: 70%;
+background-image: url(images/animate_beige.png);
+background-size: cover;
+
+}
+
+
+
+
+#hydrange{
+left: 30%;
+background-image: url(images/hydrange.png);
+background-size: 100% 100%;
+
+}
+
+#hydrange_Pink{
+left: 35%;
+background-image: url(images/hydrange_Pink.png);
+background-size: 100% 100%;
+
+}
+#gerberapink{
+left: 40%;
+background-image: url(images/gelebra_pink.png);
+background-size: 100% 100%;
+
+}
+
+#gerberawhite{
+
+left: 45%;
+background-image: url(images/gelebra_white.png);
+background-size: 100% 100%;
+
+
+}
+
+#lilipink{
+
+left: 57%;
+background-image: url(images/lilipink.png);
+background-size: 100% 100%;
+
+
+}
+
+#liliwhite{
+
+left: 61%;
+background-image: url(images/liliwhite.png);
+background-size: 100% 100%;
+
+
+
+}
+
+#curve2rose2{
+left: 30%;
+background-image: url(images/rose2image/curve2.png);
+background-size: cover;
+
+}
+#curve3rose2{
+left: 35%;
+background-image: url(images/rose2image/curve3.png);
+background-size: cover;
+
+}
+
+#Chamelaucium{
+  left: 70%;
+background-image: url(images/Chamelaucium.png);
+background-size: cover;
+
+
+}
+
+#Alstroemeria{
+  left: 80%;
+background-image: url(images/Alstroemeria.png);
+background-size: cover;
+}
+
+#rox , #lrox{
+  position: absolute;
+  width: 1000px;
+  height: 50px;
+  background-color: #000000;
+  top: 70%;
+  color: #babbc5;
+}
+#roy , #lroy{
+  position: absolute;
+  width: 1000px;
+  height: 50px;
+  background-color: #000000;
+  top: 80%;
+  color: #babbc5;
+}
+
+#roz , #lroz{
+  position: absolute;
+  width: 1000px;
+  height: 50px;
+  background-color: #000000;
+  top: 90%;
+  color: #babbc5;
+}
+#del{
+  position: absolute;
+  left: 90%;
+  top: 90%;
+  padding: 20px;
+  z-index: 10;
+}
+#getarry{
+position: absolute;
+left: 90%;
+top: 3%;
+padding: 10px;
+z-index: 10;
+
+}
+
+#showname{
+position: absolute;
+width: 10%;
+height: 20px;
+top: 50%;
+z-index: 10;
+
+}
+#xr{
+position: absolute;
+width: 20%;
+height: 100px;
+top: 50%;
+left: 40%;
+z-index: 11;
+}
+
+
+
+#set{
+    position: absolute;
+    z-index: 50;
+    right: 90%;
+    margin-top: 50px;
+    padding: 5px;
+}

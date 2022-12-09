@@ -243,14 +243,6 @@ document.getElementById('gerberawhite').addEventListener('click',gerberawhite);
 
 
   }
-
-
-
-
-
-
-  
-  
   function animatebeige() {
     loader.load('models/animate/animate_beige.glb', function (gltff) {
       gltff.scene.children[0].traverse(function (child) {
@@ -260,45 +252,18 @@ document.getElementById('gerberawhite').addEventListener('click',gerberawhite);
             child.castShadow = true;
            // child.material.envMap=cubeRenderTarget.texture
             child.material.needsUpdate = true;
-
             child.name="animatebeige"
             objects.push(child)
             animatepinkloww.push(child)
             scene.add(child);
-
           }
-           
-
-   
-
         }
-
       });
-
-
     }, (xhr) => {
-      
     }, (error) => {
-      
     });
-
-
   }
-
-
-
   // function roses2 red
-
-
-
-
-
-
-
-
-
-
-
   function curve1rose2() {
     loader.load('models/rose2/rose2curv1.glb', function (gltff) {
       gltff.scene.children[0].traverse(function (child) {
@@ -313,21 +278,11 @@ document.getElementById('gerberawhite').addEventListener('click',gerberawhite);
             objects.push(child)
             animatepinkloww.push(child)
             scene.add(child);
-
           }
-           
-
-   
-
         }
-
       });
-
-
     }, (xhr) => {
-      
     }, (error) => {
-      
     });
 
 

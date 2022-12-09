@@ -248,43 +248,6 @@ function Alstroemeria() {
 
 
 
-function hydrange_Pink() {
-  loader.load('models/changeposition/hydrange/HYDRANGE.glb', function (gltff) {
-    gltff.scene.children[0].traverse(function (child) {
-      if (child.isMesh) {
-        if(child.name=="hydrangepink"){
-          child.receiveShadow = true;
-          child.castShadow = true;
-       //   child.material.envMap=cubeRenderTarget.texture
-          child.material.needsUpdate = true;
-          
-          child.name="HYDRANGE"
-          objects.push(child)
-          global_array_of_flowers.push(child)
-          scene.add(child);
-
-        }
-         
-
- 
-
-      }
-
-    });
-
-
-  }, (xhr) => {
-    
-  }, (error) => {
-    
-  });
-
-
-}
-
-// Gerberapink
-
-
 
 function gerberapink() {
   loader.load('models/changeposition/Gerbera/gpink.glb', function (gltff) {
@@ -365,10 +328,6 @@ function lilipink() {
 
 }
 
-
-
-
-
 function liliwhite() {
   loader.load('models/changeposition/lili/LILY.glb', function (gltff) {
     gltff.scene.children[0].traverse(function (child) {
@@ -376,9 +335,7 @@ function liliwhite() {
         if(child.name=="liliwhite"){
           child.receiveShadow = true;
           child.castShadow = true;
-       //   child.material.envMap=cubeRenderTarget.texture
           child.material.needsUpdate = true;
-
           child.name="LILY"
           objects.push(child)
           global_array_of_flowers.push(child)
@@ -548,175 +505,77 @@ function onWindowResize() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   scene.updateMatrixWorld(true);
- 
-
-
-
-
-
-
   renderer = new THREE.WebGLRenderer({ antialias: true,alpha: true });
-
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.domElement.style.position = "absolute";
   renderer.domElement.style.top = 0;
   renderer.domElement.style.zIndex = "1";
-
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.outputEncoding = THREE.sRGBEncoding;
-
   container.appendChild(renderer.domElement);
-
  // renderer.gammaInput = true;
  // renderer.gammaOutput = true;
-
  // renderer.shadowMap.enabled = true;
-
-
   var controls = new OrbitControls(camera, renderer.domElement);
-
 var cubeRenderTarget = new THREE.WebGLCubeRenderTarget( 256 );
 //cubeRenderTarget.texture.type = THREE.HalfFloatType;
 var cubeCamera = new THREE.CubeCamera( 1, 1000, cubeRenderTarget );
-  
-
   window.addEventListener("resize", onWindowResize, false);
-
   let dragControls = new DragControls(objects, camera, renderer.domElement);
-
      console.log("DOWN");
- 
- 
-
   dragControls.addEventListener("dragstart", function(event) {
-    
 //console.log(event.object.name)
 //console.log(event.object.position.x)
-  
-
-
-
-if(event.object.name=="lilipink" || event.object.name=="liliwhite" || event.object.name=="WAX" || event.object.name=="AlSTOEMERIA"  ||  event.object.name=="gerberawhite" || event.object.name=="gerberapink" || event.object.name=="animatewhite" ||  event.object.name=="animatebeige" || event.object.name=="animatepinklow" || event.object.name=="animatepinkhigh" || event.object.name=="base" || event.object.name=="hydrangewhite" || event.object.name=="hydrangepink" || event.object.name=="gerbera" || event.object.name=="ROSE" || event.object.name=="HYDRANGE"|| event.object.name=="GERBERA" || event.object.name=="LILY" || event.object.name=="rose2curv" || event.object.name=="rose2curv1"|| event.object.name=="rose2curv2" || event.object.name=="rose2curv3" || event.object.name=="TOPIC"){
+if(event.object.name=="LILY" || event.object.name=="HYDRANGE" || event.object.name=="WAX" || event.object.name=="AlSTOEMERIA"  ||  event.object.name=="ROSE" ||  event.object.name=="TOPIC"||  event.object.name=="GERBERA" ){
   dragControls.enabled=true
   controls.enabled = false;
-
-
 }else{
   dragControls.enabled=false
 }
-
   });
   dragControls.addEventListener("dragend", function(event) {
     controls.enabled = true;
-
   });
-
   dragControls.addEventListener("drag", function(event) {
-
      document.getElementById("xpo").value=event.object.position.x;
      document.getElementById("ypo").value=event.object.position.y;
      document.getElementById("zpo").value=event.object.position.z;
-
- 
-
-
   })
-
-
-
-
-
-
  const pmremGenerator = new THREE.PMREMGenerator(renderer);
  pmremGenerator.compileEquirectangularShader();
  new RGBELoader()
    .setDataType(THREE.UnsignedByteType)
    .setPath('textures/equirectangular/')
    .load('studio_small_08_1k.hdr', function (texture) {
-
      const envMap = pmremGenerator.fromEquirectangular(texture).texture;
-
-
      scene.environment = envMap;
-
      texture.dispose();
      pmremGenerator.dispose();
-
      render();
    });
-
  const roughnessMipmapper = new RoughnessMipmapper(renderer);
-
-
-
-
-
-
-
-
 const pointer = new THREE.Vector2();
-
 function onPointerMove( event ) {
-
 	// calculate pointer position in normalized device coordinates
 	// (-1 to +1) for both components
-
 	pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
 }
-
-
-
-
 window.addEventListener( 'pointermove', onPointerMove );
-
 window.requestAnimationFrame(render);
-
-
 function update() {
   camera.updateProjectionMatrix();
 }
-
-
-
 let INTERSECTED;
-
 renderer.domElement.addEventListener('click', ray, true);
-
 function ray(){
-
   raycaster.setFromCamera( pointer, camera );
-
   const intersects = raycaster.intersectObjects( scene.children );
   if(intersects.length>0 ){
     if(intersects[ 0 ].object.name!="sndan"){
-
-    
     if ( INTERSECTED = intersects[ 0 ].object ) {
-
       if(INTERSECTED.name!="sndan"){
        
         document.getElementById("showname").innerHTML=INTERSECTED.name
@@ -808,4 +667,50 @@ document.getElementById("getarry")?.addEventListener("click",function(){
   }
   console.log({"data":array_of_flowers.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))}) //with sorting
   console.log(sortPropertiesByValue(references))
+})
+ function  render_flowers(flower_object_url,pox,poy,poz,rox,roy,roz,name) {
+   loader.load( flower_object_url , function (gltff) {
+    if (gltff.scene.children[0]) {
+      gltff.scene.children[0].traverse(function (child) {
+        if (child.isMesh) {
+          child.name=name;
+          /* --- Set position dataset of flower --- */
+          child.receiveShadow = true;
+          child.castShadow = true;
+          child.material.needsUpdate = true;
+          child.position.x=pox
+          child.position.y=poy
+          child.position.z=poz
+          child.rotation.x= rox
+          child.rotation.y= roy
+          child.rotation.z= roz
+          objects.push(child)
+          global_array_of_flowers.push(child)
+          scene.add(child);
+        }
+      });
+    }
+
+}, (xhr) => {
+}, (error) => {
+  console.log(error);
+
+}); 
+}
+document.getElementById("set").addEventListener("click",async ()=>{
+  const { value: text } = await Swal.fire({
+    input: 'textarea',
+    inputLabel: 'Message',
+    inputPlaceholder: 'entre position data',
+    inputAttributes: {
+      'aria-label': 'Type your message here'
+    },
+    showCancelButton: true
+  })
+  if (text) {
+    let data = JSON.parse(text);
+    data["data"].forEach(element => {
+      render_flowers("models/"+element.name+".glb",element.positionX,element.positinY,element.positinZ,element.rotationX,element.rotationY,element.rotationZ,element.name)
+    });
+  }
 })
