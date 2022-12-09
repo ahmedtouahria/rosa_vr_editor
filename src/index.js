@@ -672,7 +672,9 @@ document.getElementById("getarry")?.addEventListener("click",function(){
    loader.load( flower_object_url , function (gltff) {
     if (gltff.scene.children[0]) {
       gltff.scene.children[0].traverse(function (child) {
+        console.log(child.name)
         if (child.isMesh) {
+          if(child.name=="liliwhite" || child.name =="base" || child.name=="gerberapink" || child.name=="hydrangegreen" || child.name=="Chamelaucium"||child.name=="Alstroemeria"||child.name=="animatebeige"){
           child.name=name;
           /* --- Set position dataset of flower --- */
           child.receiveShadow = true;
@@ -687,7 +689,7 @@ document.getElementById("getarry")?.addEventListener("click",function(){
           objects.push(child)
           global_array_of_flowers.push(child)
           scene.add(child);
-        }
+        }}
       });
     }
 
